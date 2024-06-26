@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	// 명령행 인수로 전달된 파일 이름을 저장하되 길이를 점검한다.
 	const char *filename = argv[2];
 	if (strlen(filename) > (NAMESIZE - 1)) {
-		fprintf(stderr, "<FileName>의 최대 길이는 %d입니다.", (NAMESIZE - 1));
+		fprintf(stderr, "The max length of <FileName> is %d.", (NAMESIZE - 1));
 		exit(1);
 	}
 
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 		err_display("send()");
 		exit(1);
 	}
-	printf("%s 전송 시작!\n", name);
+	printf("%s Start to send!\n", name);
 
 	do {
 		// (3) 파일 크기를 얻는다.
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
 			break;
 		}
 	} while (0);
-	printf("%s 전송 완료! 총 %d바이트\n", name, filesize);
+	printf("%s Complete! Total %d bytes\n", name, filesize);
 
 	// 파일과 소켓 닫기
 	fclose(fp);
